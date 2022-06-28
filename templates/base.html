@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.2.0-beta1-dist/css/bootstrap.css') }}">
+        <script src="{{ url_for('static', filename='bootstrap-5.2.0-beta1-dist/js/bootstrap.js') }}"></script>
+        <script src="{{ url_for('static', filename='wheelnav.js-1.8.0/raphael.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='wheelnav.js-1.8.0/wheelnav.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <div class="container">
+        <nav>
+            <div id="divWheel" data-wheelnav
+                data-wheelnav-colors="#ADD8E6"
+                data-wheelnav-slicepath="DonutSlice"
+                data-wheelnav-navangle="270"
+                data-wheelnav-titleheight="30"
+                data-wheelnav-init>
+                <div data-wheelnav-navitemimg="{{ url_for('static', filename='img/home.svg') }}"><a href="/">Home</a></div>
+                <div data-wheelnav-navitemimg="{{ url_for('static', filename='img/hourglass_bottom.svg') }}"><a href="/">Countdown</a></div>
+                <div data-wheelnav-navitemimg="{{ url_for('static', filename='img/settings.svg') }}"><a href="/cart/">Settings</a></div>
+            </div>
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      </div>
+    </body>
+</html>
