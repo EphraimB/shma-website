@@ -11,7 +11,6 @@ function highlightNavItem() {
   }
 
 function navWheel() {
-    var icon = document.currentScript.getAttribute('icon');
     var highlighttedNav = highlightNavItem();
     var wheel = new wheelnav("divWheel", null, 300, 300);
     wheel.slicePathFunction = slicePath().DonutSlice;
@@ -24,8 +23,8 @@ function navWheel() {
     wheel.sliceInitPathCustom = wheel.slicePathCustom;
   
     wheel.spreaderEnable = true;
-    wheel.spreaderInTitle = icon;
-    wheel.spreaderOutTitle = icon;
+    wheel.spreaderInTitle = 'imgsrc:/static/img/globe.svg';
+    wheel.spreaderOutTitle = 'imgsrc:/static/img/globe.svg';
     wheel.spreaderInPercent = 1.0;
     wheel.spreaderOutPercent = 1.0;
     wheel.spreaderRadius = wheel.wheelRadius * 0.25;
