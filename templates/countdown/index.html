@@ -4,7 +4,7 @@
 {% block content %}
 <div class="card mx-auto text-bg-primary" style="width: 18rem;">
   <div class="card-body">
-    <p class="card-text fs-1">04:45:07</p>
+    <p class="card-text fs-1" id="timer"></p>
     <p class="card-text">Until <span class="fs-2">8:00 PM</span></p>
   </div>
 </div>
@@ -18,4 +18,7 @@ Hear, O Israel, Adonai is our God, Adonai is One!</p>
 <p>Baruch sheim k'vod malchuto l'olam va-ed.
 <br>
 Blessed is God's glorious majesty forever and ever.</p>
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('static', filename='js/timer.js') }}"></script>
 {% endblock %}
