@@ -5,6 +5,12 @@ var today = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(
 
 var countDownDate = today;
 
+function pad(num, size) {
+  num = num.toString();
+  while (num.length < size) num = "0" + num;
+  return num;
+}
+
 // Update the count down every 1 second
 var x = setInterval(function() {
     // Get today's date and time
@@ -20,12 +26,12 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
     // Output the result in an element with id="demo"
-    timer.innerHTML = hours + ":"
-    + minutes + ":" + seconds + "";
+    timer.innerHTML = pad(hours, 2) + ":"
+    + pad(minutes, 2) + ":" + pad(seconds, 2) + "";
       
     // If the count down is over, write some text 
     if (distance < 0) {
       clearInterval(x);
-      timer.innerHTML = "0:0:0";
+      timer.innerHTML = "00:00:00";
     }
   }, 1000);
